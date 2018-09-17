@@ -1,0 +1,16 @@
+.foto {
+    background-color: white;
+    width: 216px;
+    height: 300px;
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+
+ul.actions li {
+    padding: 0 0 0 0;
+}
+
+ul li {
+    padding-left: 0;
+}

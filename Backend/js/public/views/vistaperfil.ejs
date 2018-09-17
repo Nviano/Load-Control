@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>CRUD Load Control</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link href="css/fontawesome-all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/vistaperfil.css" />
+    <noscript><link rel="stylesheet" href="../css/noscript.css" /></noscript>
+
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <!-- Note: The "styleN" class below should match that of the banner element. -->
+        <header id="header" class="alt style2">
+            <a href="index" class="logo"><strong>CRUD</strong> <span>Load Control</span></a>
+            <nav>
+                <a href="#menu">Menu</a>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <ul class="links">
+                <li><a href="index">Inicio</a></li>
+                <li><a href="staff">Staff</a></li>
+                <li><a href="player">Jugador</a></li>
+            </ul>
+            <ul class="actions stacked">
+                <li><a href="#" class="button primary fit">Empezar</a></li>
+                <li><a href="login" class="button fit">Log In</a></li>
+            </ul>
+        </nav>
+
+        <!-- Banner -->
+        <!-- Note: The "styleN" class below should match that of the header element. -->
+
+
+        <!-- Contact -->
+        <section id="contact">
+            <div class="inner">
+                <section>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-10 back">
+                                <div class="row">
+                                    <div class="col-6" id="vistaperfil">
+
+                                        <div class="nombre mt-5 mb-5 field half">
+                                            <h4>Nombre</h4>
+                                            <p>
+                                                <%= resultado[0].nombre%>
+                                            </p>
+                                        </div>
+                                        <div class="apellidos mt-5 mb-5 field half">
+                                            <h4>Apellidos</h4>
+                                            <p>
+                                                <%= resultado[0].apellidos%>
+                                            </p>
+                                        </div>
+                                        <div class="telefono mt-5 mb-5 field half">
+                                            <h4>Teléfono</h4>
+                                            <p>
+                                                <%= resultado[0].telefono%>
+                                            </p>
+                                        </div>
+                                        <div class="pais mt-5 mb-5 field half">
+                                            <h4>Email</h4>
+                                            <p>
+                                                <%= resultado[0].email%>
+                                            </p>
+                                        </div>
+                                        <div class="nacimiento mt-5 mb-5 field half">
+                                            <h4>Fecha de Nacimiento</h4>
+                                            <p>
+                                                <%=nacimiento%>
+                                            </p>
+                                        </div>
+                                        <div class="email mt-5 mb-5 field half">
+                                            <h4>Pais</h4>
+                                            <p>
+                                                <%= resultado[0].pais%>
+                                            </p>
+                                        </div>
+                                        <div class="altura mt-5 mb-5 field third">
+                                            <h4>Altura</h4>
+                                            <p>
+                                                <%= resultado[0].altura%>
+                                            </p>
+                                        </div>
+                                        <div class="peso mt-5 mb-5 field third">
+                                            <h4>Peso</h4>
+                                            <p>
+                                                <%= resultado[0].peso%>
+                                            </p>
+                                        </div>
+                                        <div class="posicion mt-5 mb-5 field third">
+                                            <h4>Posición</h4>
+                                            <p>
+                                                <%= resultado[0].posicion%>
+                                            </p>
+                                        </div>
+                                    </div>
+
+
+
+                </section>
+                <section class="split">
+                    <section>
+                        <div class="contact-method">
+                            <div class="col-4 foto">
+                                <div class="foto">Foto</div>
+                                <ul class="actions">
+                                    <li><input type="button" value="Modifica tu foto" id="btnPlayer" class="primary"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+
+                </section>
+                </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
+                <ul class="icons">
+                    <li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+                    <li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+                    <li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+                    <li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                </ul>
+                <ul class="copyright">
+                    <li>&copy; Load Control</li>
+                    <li>Design: <a href="https://html5up.net">Nacho Viano</a></li>
+                </ul>
+            </div>
+        </footer>
+
+        </div>
+
+        <!-- Scripts -->
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/jquery.scrolly.min.js"></script>
+        <script src="../js/jquery.scrollex.min.js"></script>
+        <script src="../js/browser.min.js"></script>
+        <script src="../js/breakpoints.min.js"></script>
+        <script src="../js/util.js"></script>
+        <script src="../js/main.js"></script>
+        <script src="../js/mainUsers.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/jquery-3.3.1.min.js"></script>
+
+
+</body>
+
+</html>

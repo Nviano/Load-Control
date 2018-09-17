@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+    <title>Log In Load Control</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <noscript><link rel="stylesheet" href="../css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <!-- Note: The "styleN" class below should match that of the banner element. -->
+        <header id="header" class="alt style2">
+            <a href="index" class="logo"><strong>Log In</strong> <span>Player</span></a>
+            <nav>
+                <a href="#menu">Menu</a>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <ul class="links">
+                <li><a href="index">Inicio</a></li>
+                <li><a href="staff">Staff</a></li>
+                <li><a href="player">Jugador</a></li>
+            </ul>
+            <ul class="actions stacked">
+                <li><a href="#" class="button primary fit">Empezar</a></li>
+                <li><a href="login" class="button fit">Log In</a></li>
+            </ul>
+        </nav>
+
+        <!-- Banner -->
+        <!-- Note: The "styleN" class below should match that of the header element. -->
+
+
+        <!-- Contact -->
+        <section id="contact">
+            <div class="inner">
+                <section>
+                    <form id="formPlayer">
+                        <div class="fields">
+                            <div class="field">
+                                <label for="email">Nombre</label>
+                                <input type="text" name="nombre" id="nombre" />
+                            </div>
+                            <div class="field">
+                                <label for="email">Apellidos</label>
+                                <input type="text" name="apellidos" id="apellidos" />
+                            </div>
+                            <div class="field">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" id="email" />
+                            </div>
+                            <div class="field half">
+                                <label for="email">Contraseña</label>
+                                <input type="password" name="password" id="password" />
+                            </div>
+                            <div class="field half">
+                                <label for="email">Confirma Contraseña</label>
+                                <input type="password" name="confirmpassword" id="confirmpassword" />
+                            </div>
+                            <div class="field half">
+                                <label for="email">Pais</label>
+                                <input type="text" name="pais" id="pais" />
+                            </div>
+                            <div class="field half">
+                                <label for="email">Club</label>
+                                <select id="clubes" name="clubes">
+                     
+                   
+                                </select>
+                            </div>
+                            <div class="field half">
+                                <label for="email">Fecha de Nacimiento</label>
+                                <input type="date" name="fechaNacimiento" id="fechaNacimiento" />
+                            </div>
+                            <div class="field half">
+                                <label for="email">Teléfono</label>
+                                <input type="number" name="telefono" id="telefono" />
+                            </div>
+                            <div class="field third">
+                                <label for="email">Altura</label>
+                                <input type="number" name="altura" id="altura" />
+                            </div>
+                            <div class="field third">
+                                <label for="email">Peso</label>
+                                <input type="number" name="peso" id="peso" />
+                            </div>
+                            <div class="field third">
+                                <label for="email">Posición</label>
+                                <select id="posicion" name="posicion" class="form-control p-0">
+                                    <option selected>Base</option>
+                                    <option>Escolta</option>
+                                    <option>Alero</option>
+                                    <option>Ala-pívot</option>
+                                    <option>Pívot</option>
+                                </select>
+                            </div>
+                            <div class="field half">
+                                <label for="captcha"></label>
+                                <div class="g-recaptcha" data-sitekey="6Lf8EWUUAAAAACCr1dMLL_fAFmAbbYSa6KYLbA_F"></div>
+
+                            </div>
+
+                        </div>
+
+                        <ul class="actions">
+                            <li><input type="submit" value="Regístrate" id="btnPlayer" class="primary" onclick="validation();" /></li>
+
+                        </ul>
+                    </form>
+                </section>
+                <section class="split">
+                    <section>
+                        <div class="contact-method">
+                            <span class="icon alt fa-envelope"></span>
+                            <h3>Email</h3>
+                            <a href="#">nviano@hotmail.es</a>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="contact-method">
+                            <span class="icon alt fa-phone"></span>
+                            <h3>Teléfono</h3>
+                            <span>(+34) 665996974</span>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="contact-method">
+                            <span class="icon alt fa-home"></span>
+                            <h3>Dirección</h3>
+                            <span>C/Rios Rosas 5 <br />
+										29007 Málaga<br />
+										España</span>
+                        </div>
+                    </section>
+                </section>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
+                <ul class="icons">
+                    <li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+                    <li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+                    <li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+                    <li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                </ul>
+                <ul class="copyright">
+                    <li>&copy; Load Control</li>
+                    <li>Design: <a href="#">Nacho Viano</a></li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery.scrolly.min.js"></script>
+    <script src="../js/jquery.scrollex.min.js"></script>
+    <script src="../js/browser.min.js"></script>
+    <script src="../js/breakpoints.min.js"></script>
+    <script src="../js/util.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/mainUsers.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="../js/captchaPlayer.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+
+</body>
+
+</html>
