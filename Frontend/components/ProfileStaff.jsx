@@ -3,7 +3,7 @@ import { Slave } from 'react-syncing';
 import { TextField, Button } from '@material-ui/core';
 
 
-import image from '../images/avatar.png';
+import image from '../images/bgrey.jpg';
 
 export default class ProfileStaff extends Slave {
 
@@ -36,7 +36,7 @@ export default class ProfileStaff extends Slave {
             .then(res => {
                 console.log("user", res.result)
                 this.set({
-                    user: res.result[0]
+                    user: res.result
                 })
                 console.log(res.result)
             })
@@ -57,34 +57,41 @@ export default class ProfileStaff extends Slave {
 
     handleUpdate() {
         const url = `http://localhost:8000/jugador/modificar`;
-
-        fetch(url, {
-            method: 'post',
-            credentials: "include",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                nombre: this.state.user.nombre,
-                apellidos: this.state.user.apellidos,
-                email: this.state.user.email,
-                telefono: this.state.user.telefono,
-                idPersona: this.state.user.idPersona
+        const reader = new FileReader();
+        reader.readAsDataURL(window.document.querySelector("#avatar").files[0]);
+        reader.onload = () => {
+            fetch(url, {
+                method: 'post',
+                credentials: "include",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    nombre: this.state.user.nombre,
+                    apellidos: this.state.user.apellidos,
+                    email: this.state.user.email,
+                    telefono: this.state.user.telefono,
+                    idPersona: this.state.user.idPersona,
+                    avatar: this.state.user.avatar
+                })
             })
-        })
-            .then((res) => res.json())
-            .then((res) => {
-                if (res.ok) {
-                    this.set({ ok: true })
-                    swal("Buen trabajo", "Perfil modificado correctamente", "success");
+                .then((res) => res.json())
+                .then((res) => {
+                    if (res.ok) {
+                        this.set({ ok: true })
+                        swal("Buen trabajo", "Perfil modificado correctamente", "success");
 
-                } else {
-                    this.set({ error: true, errorMsg: res.error })
-                    swal("Error", res.error, "error");
+                    } else {
+                        this.set({ error: true, errorMsg: res.error })
+                        swal("Error", res.error, "error");
 
-                }
-            })
-            .catch(console.log)
+                    }
+                })
+                .catch(console.log)
+        };
+        reader.onerror = function (error) {
+            console.log('Error: ', error);
+        };
     }
 
 
@@ -93,83 +100,86 @@ export default class ProfileStaff extends Slave {
     render() {
         return (
             <div style={{ display: "flex" }} >
-                <div
+                <div onClick={() => document.querySelector('#avatar').click()}
                     style={{
-                        width: '15%',
-                        marginTop: '90px',
-                        marginLeft: '150px'
+                        width: '28.3%',
+                        height: '80px',
+                        marginTop: '200px',
+                        marginLeft: '390px'
                     }}>
-                    <img style={{ width: "100%" }} src={image}></img>
-
+                    <img
+                        style={{
+                            width: "75%", borderStyle: 'solid', borderColor: 'black',
+                            borderWidth: 5
+                        }}
+                        src={this.state.user.avatar}
+                        value={this.state.avatar}
+                        onChange={this.handleChange('avatar')}
+                    ></img>
+                    <h1 style={{ marginLeft: 100 }}>{this.state.user.nombre + ' ' + this.state.user.apellidos}</h1>
                 </div>
 
-                <div
 
-                    style={{
-                        marginLeft: '20%',
-                        width: '50%',
 
-                    }}>
-                    <h1 style={{
-                        marginTop: '15%',
-                        fontWeight: 'bolder',
-                        fontSize: '40px'
+                <div style={{
+                    marginTop: 200.5,
+                    marginLeft: "5%",
+                    width: 400,
+                    transform: "translateX(-50%)",
+                    padding: '13px',
+                    backgroundColor: 'white',
+                    opacity: 0.7
 
-                    }}>Tu perfil de Load Control</h1>
-                    <div style={{
-                        marginTop: 50,
-                        marginLeft: "30%",
-                        width: 500,
-                        transform: "translateX(-50%)",
-                        padding: '15px',
-                    }}>
+                }}>
 
-                        <form style={{ display: 'flex', flexWrap: 'wrap' }}>
-                            <TextField
-                                style={{ width: 500 }}
-                                value={this.state.user.nombre}
-                                onChange={this.handleChange('nombre')}
-                                margin="normal"
-                                helperText="Nombre"
-                            />
-                            <TextField
-                                style={{ width: 500 }}
-                                value={this.state.user.apellidos}
-                                onChange={this.handleChange('apellidos')}
-                                margin="normal"
-                                helperText="Apellidos"
-                            />
-                            <TextField
-                                style={{ width: 500 }}
-                                value={this.state.user.email}
-                                onChange={this.handleChange('email')}
-                                type="email"
-                                margin="normal"
-                                helperText="Email"
-                            />
+                    <form style={{ display: 'flex', flexDirection: "column", flexWrap: 'wrap', width: 300 }}>
+                        <TextField
+                            value={this.state.user.nombre}
+                            onChange={this.handleChange('nombre')}
+                            margin="normal"
+                            helperText="Nombre"
+                        />
+                        <TextField
+                            value={this.state.user.apellidos}
+                            onChange={this.handleChange('apellidos')}
+                            margin="normal"
+                            helperText="Apellidos"
+                        />
+                        <TextField
+                            value={this.state.user.email}
+                            onChange={this.handleChange('email')}
+                            type="email"
+                            margin="normal"
+                            helperText="Email"
+                        />
 
-                            <TextField
-                                style={{ width: 500 }}
-                                value={this.state.user.telefono}
-                                onChange={this.handleChange('telefono')}
-                                type="number"
-                                margin="normal"
-                                helperText="Teléfono"
-                            />
-
-                            <Button
-                                color="secondary"
-                                style={{ marginTop: 50, width: 500 }}
-                                onClick={this.handleUpdate}
-                                variant="contained">
-                                Modificar
+                        <TextField
+                            value={this.state.user.telefono}
+                            onChange={this.handleChange('telefono')}
+                            type="number"
+                            margin="normal"
+                            helperText="Teléfono"
+                        />
+                        <input
+                            accept="image/*"
+                            style={{ display: 'none' }}
+                            id="avatar"
+                            type="file"
+                        />
+                        <Button
+                            color="secondary"
+                            style={{ marginTop: 50, width: 100 }}
+                            onClick={this.handleUpdate}
+                            variant="outlined">
+                            Modificar
                             </Button>
 
-                        </form>
-                    </div>
+                    </form>
                 </div>
+                <img src={image} style={{ position: 'absolute', opacity: 0.8, zIndex: -10, width: '100%' }} />
 
             </div>
+
         );
     }
 }    

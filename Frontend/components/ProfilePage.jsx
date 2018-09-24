@@ -11,40 +11,12 @@ export default class ProfilePage extends Slave {
     constructor() {
         super()
 
-        this.getProfileStaff = this.getProfileStaff.bind(this);
         this.state = {
 
 
             user: {},
 
         }
-    }
-
-    didMount() {
-        this.getProfileStaff()
-    }
-
-    getProfileStaff() {
-        const url = `http://localhost:8000/vistaperfil-staff`;
-        fetch(url, {
-            method: 'GET',
-            credentials: "include",
-            headers: {
-                'Content-Type': 'application/json'
-            }
-
-        })
-            .then((res) => res.json())
-            .then(res => {
-
-                this.set({
-                    user: res.result[0]
-                })
-
-            })
-            .catch(error => {
-                console.log(error)
-            })
     }
 
     render() {

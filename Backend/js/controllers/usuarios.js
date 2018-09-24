@@ -5,7 +5,7 @@ var bcrypt = require('bcrypt-nodejs');
 //Inserta tanto jugadores como staff en sus tablas de BBDD
 var controller = {
     addPersona: function (req, res) {
-
+        console.log(req.body)
         let rol = 1;
         let password = req.body.password;
         bcrypt.genSalt(10, function (err, salt) {
@@ -156,7 +156,8 @@ var controller = {
         let sql = `UPDATE persona set nombre ='${req.body.nombre}', 
         apellidos= '${req.body.apellidos}',
         telefono= '${req.body.telefono}' ,
-        email= '${req.body.email}' 
+        email= '${req.body.email}',
+        avatar= '${req.body.avatar}'
         where idPersona = '${req.body.idPersona}'`;
         console.log(sql);
         con.query(sql, function (err, result) {
@@ -224,7 +225,7 @@ var controller = {
     //Trae los datos de los staff
     getStaff: function (req, res) {
         console.log(req.user)
-        let sql = `SELECT P.idPersona,P.nombre,P.apellidos,P.email,P.idClub,P.pais,P.rol
+        let sql = `SELECT P.idPersona,P.avatar,P.nombre,P.apellidos,P.email,P.idClub,P.pais,P.rol
         ,P.fechaNacimiento,P.telefono FROM persona 
         AS P where P.idPersona = '${req.user.id}'`;
 
@@ -233,8 +234,10 @@ var controller = {
             if (err) {
                 res.status(500).send(err);
             } else {
-
-                res.status(200).send({ result, ok: true });
+                const staff = result[0]
+                var bufferBase64 = staff.avatar.toString('utf-8');
+                staff.avatar = bufferBase64;
+                res.status(200).send({ result: staff, ok: true });
             }
         });
 

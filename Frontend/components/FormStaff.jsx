@@ -27,6 +27,7 @@ export default withRouter(class FormStaff extends Slave {
             telefono: '',
             club: '',
             clubes: [],
+            avatar: ''
         }
 
 
@@ -70,7 +71,8 @@ export default withRouter(class FormStaff extends Slave {
                     club: this.state.club,
                     clubes: this.state.clubes,
                     email: this.state.email,
-                    password: this.state.password
+                    password: this.state.password,
+                    avatar: reader.result
                 })
             })
                 .then((res) => res.json())
