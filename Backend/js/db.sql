@@ -3,7 +3,7 @@ CREATE TABLE club(
 idClub INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 nombre varchar(50) NOT NULL,
 pais varchar(70) NOT NULL,
-ciudad varchar(70) NOT NULL)
+ciudad varchar(70) NOT NULL);
 
 DROP TABLE if exists persona;
 CREATE TABLE persona (
@@ -24,7 +24,7 @@ UNIQUE INDEX email_UNIQUE (email ASC),
 INDEX FK_usuario_club (idClub ASC),
 CONSTRAINT FK_usuario_club
 FOREIGN KEY (idClub)
-REFERENCES club (idClub))
+REFERENCES club (idClub));
 
 DROP TABLE if exists jugador;
 CREATE TABLE jugador(
@@ -32,7 +32,7 @@ idPersona INT  NOT NULL,
 altura varchar(5) NOT NULL,
 peso varchar(5) NOT NULL,
 posicion varchar(20) NOT NULL,
-CONSTRAINT FK_jugador_persona FOREIGN KEY(idPersona) REFERENCES persona(idPersona))
+CONSTRAINT FK_jugador_persona FOREIGN KEY(idPersona) REFERENCES persona(idPersona));
 
 DROP TABLE if exists training;
 CREATE TABLE training(
