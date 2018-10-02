@@ -30,7 +30,7 @@ export default withRouter(class FormTrainingPlayer extends Slave {
     }
 
     handleRegisterTraining() {
-        const url = `http://localhost:8000/addTrainingPlayer`;
+        const url = `//${process.env.SERVER}/addTrainingPlayer`;
 
         fetch(url, {
             method: 'post',

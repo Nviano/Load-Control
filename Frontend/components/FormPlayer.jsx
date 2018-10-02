@@ -64,7 +64,7 @@ export default withRouter(class FormPlayer extends Slave {
 
 
     getClub() {
-        const url = `http://localhost:8000/club/`;
+        const url = `//${process.env.SERVER}/club/`;
         axios.get(url)
             .then(res => {
                 this.set({
@@ -81,7 +81,7 @@ export default withRouter(class FormPlayer extends Slave {
 
 
     handleRegister() {
-        const url = `http://localhost:8000/addPersona`;
+        const url = `//${process.env.SERVER}/addPersona`;
 
         const reader = new FileReader();
         reader.readAsDataURL(window.document.querySelector("#avatar").files[0]);

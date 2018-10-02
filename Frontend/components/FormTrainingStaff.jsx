@@ -42,7 +42,7 @@ export default withRouter(class FormTrainingStaff extends Slave {
     }
 
     handleRegisterTraining() {
-        const url = `http://localhost:8000/addTrainingStaff`;
+        const url = `//${process.env.SERVER}/addTrainingStaff`;
 
         fetch(url, {
             method: 'post',

@@ -32,7 +32,7 @@ export default class TrainingsPlayer extends Slave {
     }
 
     getTrainings() {
-        const url = `http://localhost:8000/trainings-player`;
+        const url = `//${process.env.SERVER}/trainings-player`;
         fetch(url, {
             method: 'GET',
             credentials: "include",

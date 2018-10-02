@@ -6,6 +6,7 @@ var session = require('express-session');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 
+
 //Configuracion de archivos
 
 app.use(express.static(__dirname + '/public'));
@@ -38,7 +39,7 @@ app.use(session({
     //   }
 }));
 app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "http://localhost:1234");
+    res.header("Access-Control-Allow-Origin", "https://nviano.es");
     res.header("Access-Control-Allow-Credentials", "true");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');

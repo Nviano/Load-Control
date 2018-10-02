@@ -18,7 +18,7 @@ class ButtonAppBar extends Slave {
           <Toolbar style={{ flexDirection: this.state.logged ? "row-reverse" : "row" }}>
 
             {this.state.logged && <Button style={{ color: "white" }} onClick={() => {
-              const url = `http://localhost:8000/logout`;
+              const url = `//${process.env.SERVER}/logout`;
 
               fetch(url, {
                 method: 'get',

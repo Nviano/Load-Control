@@ -24,7 +24,7 @@ export default class VistaPerfil extends Slave {
     }
 
     getProfilePlayer() {
-        const url = `http://localhost:8000/vistaperfil-player`;
+        const url = `//${process.env.SERVER}/vistaperfil-player`;
         fetch(url, {
             method: 'GET',
             credentials: "include",
@@ -45,7 +45,7 @@ export default class VistaPerfil extends Slave {
     }
 
     handleUpdate() {
-        const url = `http://localhost:8000/jugador/modificar`;
+        const url = `//${process.env.SERVER}/jugador/modificar`;
 
         fetch(url, {
             method: 'post',

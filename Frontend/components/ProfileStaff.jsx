@@ -23,7 +23,7 @@ export default class ProfileStaff extends Slave {
     }
 
     getProfileStaff() {
-        const url = `http://localhost:8000/vistaperfil-staff`;
+        const url = `//${process.env.SERVER}/vistaperfil-staff`;
         fetch(url, {
             method: 'GET',
             credentials: "include",
@@ -56,7 +56,7 @@ export default class ProfileStaff extends Slave {
     }
 
     handleUpdate() {
-        const url = `http://localhost:8000/jugador/modificar`;
+        const url = `//${process.env.SERVER}/jugador/modificar`;
         const reader = new FileReader();
         reader.readAsDataURL(window.document.querySelector("#avatar").files[0]);
         reader.onload = () => {

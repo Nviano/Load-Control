@@ -20,7 +20,7 @@ import Chart from './components/Chart';
 
 class App extends Master {
     didMount() {
-        const url = `http://localhost:8000/status`;
+        const url = `https://server.nviano.es/status`;
         fetch(url, {
             method: 'get',
             credentials: "include",

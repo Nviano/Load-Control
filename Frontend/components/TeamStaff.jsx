@@ -30,7 +30,7 @@ export default class TeamStaff extends Slave {
     }
 
     getPlayerClub() {
-        const url = `http://localhost:8000/team`;
+        const url = `//${process.env.SERVER}/team`;
         fetch(url, {
             method: 'GET',
             credentials: "include",
@@ -53,7 +53,7 @@ export default class TeamStaff extends Slave {
     }
 
     deletePlayer(idPersona) {
-        const url = `http://localhost:8000/persona/delete`;
+        const url = `//${process.env.SERVER}/persona/delete`;
 
         fetch(url, {
             method: 'post',

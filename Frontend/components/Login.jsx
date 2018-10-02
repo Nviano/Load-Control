@@ -29,7 +29,7 @@ export default class Login extends Slave {
     }
 
     handleLogin() {
-        const url = `http://localhost:8000/users/loginPersona`;
+        const url = `//${process.env.SERVER}/users/loginPersona`;
 
         fetch(url, {
             method: 'post',

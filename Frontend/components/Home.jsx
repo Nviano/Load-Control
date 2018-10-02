@@ -21,7 +21,7 @@ export default class Home extends Slave {
     }
 
     getProfileStaff() {
-        const url = `http://localhost:8000/vistaperfil-staff`;
+        const url = `//${process.env.SERVER}/vistaperfil-staff`;
         fetch(url, {
             method: 'GET',
             credentials: "include",

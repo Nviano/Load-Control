@@ -27,7 +27,7 @@ export default withRouter(class Chart extends Slave {
     }
 
     getPlayerClub() {
-        const url = `http://localhost:8000/report-player`;
+        const url = `//${process.env.SERVER}/report-player`;
         fetch(url, {
             method: 'Post',
             credentials: "include",

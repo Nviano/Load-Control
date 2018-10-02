@@ -26,7 +26,7 @@ export default class ProfilePlayer extends Slave {
 
 
     getProfilePlayer() {
-        const url = `http://localhost:8000/vistaperfil-player`;
+        const url = `//${process.env.SERVER}/vistaperfil-player`;
         fetch(url, {
             method: 'GET',
             credentials: "include",
@@ -47,7 +47,7 @@ export default class ProfilePlayer extends Slave {
     }
 
     handleUpdate() {
-        const url = `http://localhost:8000/jugador/modificar`;
+        const url = `//${process.env.SERVER}/jugador/modificar`;
         const reader = new FileReader();
         reader.readAsDataURL(window.document.querySelector("#avatar").files[0]);
         reader.onload = () => {
