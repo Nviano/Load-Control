@@ -30,7 +30,7 @@ export default class TeamStaff extends Slave {
     }
 
     getPlayerClub() {
-        const url = `//${process.env.SERVER}/team`;
+        const url = `//server.nviano.es/team`;
         fetch(url, {
             method: 'GET',
             credentials: "include",
@@ -53,7 +53,7 @@ export default class TeamStaff extends Slave {
     }
 
     deletePlayer(idPersona) {
-        const url = `//${process.env.SERVER}/persona/delete`;
+        const url = `//server.nviano.es/persona/delete`;
 
         fetch(url, {
             method: 'post',

@@ -23,7 +23,7 @@ export default class ProfileStaff extends Slave {
     }
 
     getProfileStaff() {
-        const url = `//${process.env.SERVER}/vistaperfil-staff`;
+        const url = `//server.nviano.es/vistaperfil-staff`;
         fetch(url, {
             method: 'GET',
             credentials: "include",
@@ -56,7 +56,7 @@ export default class ProfileStaff extends Slave {
     }
 
     handleUpdate() {
-        const url = `//${process.env.SERVER}/jugador/modificar`;
+        const url = `//server.nviano.es/jugador/modificar`;
         const reader = new FileReader();
         reader.readAsDataURL(window.document.querySelector("#avatar").files[0]);
         reader.onload = () => {

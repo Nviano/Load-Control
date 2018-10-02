@@ -42,7 +42,7 @@ export default withRouter(class FormTrainingStaff extends Slave {
     }
 
     handleRegisterTraining() {
-        const url = `//${process.env.SERVER}/addTrainingStaff`;
+        const url = `//server.nviano.es/addTrainingStaff`;
 
         fetch(url, {
             method: 'post',

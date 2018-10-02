@@ -37,7 +37,7 @@ export default withRouter(class FormStaff extends Slave {
     }
 
     getClub() {
-        const url = `//${process.env.SERVER}/club/`;
+        const url = `//server.nviano.es/club/`;
         axios.get(url)
             .then(res => {
                 this.set({
@@ -52,7 +52,7 @@ export default withRouter(class FormStaff extends Slave {
 
 
     handleRegister() {
-        const url = `//${process.env.SERVER}/addPersona`;
+        const url = `//server.nviano.es/addPersona`;
         const reader = new FileReader();
         reader.readAsDataURL(window.document.querySelector("#avatar").files[0]);
         reader.onload = () => {

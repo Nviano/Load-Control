@@ -34,7 +34,7 @@ export default withRouter(class TeamStaff extends Slave {
     }
 
     getPlayerClub() {
-        const url = `//${process.env.SERVER}/report-player`;
+        const url = `//server.nviano.es/report-player`;
         fetch(url, {
             method: 'Post',
             credentials: "include",
