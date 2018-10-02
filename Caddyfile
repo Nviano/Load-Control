@@ -1,0 +1,9 @@
+nviano.es {
+    root Frontend/dist/
+    tls nviano@hotmail.es
+}
+
+server.nviano.es {
+    proxy / localhost:8000
+    tls nviano@hotmail.es
+}
