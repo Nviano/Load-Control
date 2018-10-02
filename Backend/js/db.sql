@@ -59,7 +59,6 @@ CONSTRAINT FK_training FOREIGN KEY(idTraining) REFERENCES training(idTraining));
 Insert into club (nombre,pais,ciudad) VALUES ("Unicaja","España","Malaga");
 Insert into club (nombre,pais,ciudad) VALUES ("Chicago Bulls","Estados Unidos","Chicago");
 Insert into club (nombre,pais,ciudad) VALUES ("Soles","Mexico","Mexicali");
-Insert into persona (idClub,nombre,apellidos,email,password,pais,fechaNacimiento,telefono,altura,peso) VALUES (2,"Nacho","Viano","nv@nv.com",1234,"españa",2000/11/11,666554433,179,89);
 Insert into posicion (posicion) VALUE ("Base");
 
 
